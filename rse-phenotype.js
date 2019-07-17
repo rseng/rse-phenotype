@@ -57,6 +57,10 @@ new Vue ({
         }
     },
 
+    pullRequest: function() {
+        window.open("https://github.com/vsoch/rse-phenotypes/upload/master/phenotypes", "_blank");    
+    },
+
     // Functions to split variables by delimiter of choice
     getLabels: function() {
         return this.labels.split(",");

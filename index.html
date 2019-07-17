@@ -86,7 +86,7 @@
                 </div>
                 <div class="form-group">
                     <button v-on:click="saveImage()" class="btn btn-primary">Export</button>
-                    <a href="https://github.com/vsoch/rse-phenotypes/upload/master/phenotypes"><button v-if="showShare" class="btn btn-primary">Share your Phenotype</button></a>
+                    <a @click="pullRequest()"><button v-if="showShare" class="btn btn-primary">Share your Phenotype</button></a>
                 </div>
             </form>
         </div>
