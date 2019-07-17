@@ -47,7 +47,7 @@
             <button class="btn btn-primary btn-sm" v-on:click="render">Randomize</button>
         </div>
         <div class="col-md-6">
-            <form class="form" @submit.prevent="addExpenses">
+            <form class="form" @submit.prevent>
               <h4>RSE Generator</h4>
                 <p style="margin-bottom:20px"><small>What kind of research software engineer are you?</small></p>
                 <div class="form-group">
@@ -72,6 +72,7 @@
                 </div>
                 <div class="form-group">
                     <button v-on:click="saveImage()" class="btn btn-primary">Export</button>
+                    <a href="https://github.com/USRSE/rse-phenotype/upload/master/phenotypes" target="_blank"><button v-if="showShare" class="btn btn-primary">Share your Phenotype</button></a>
                 </div>
             </form>
         </div>

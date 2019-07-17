@@ -1,6 +1,7 @@
 new Vue ({
   el: '#app',
   data: {
+    showShare: false,
     groups: "open source, academia",
     labels: "Software Engineering, Open Source Development, User Support, Research, Documentation",
     chart: undefined,
@@ -34,6 +35,7 @@ new Vue ({
 
     saveImage: function() {
 
+        this.showShare = true;
         var canvas = document.getElementById("rse-generator");
         canvas.toBlob(function(blob) {
             saveAs(blob, "my-rse-phenotype.png");
