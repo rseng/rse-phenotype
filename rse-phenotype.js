@@ -1,3 +1,13 @@
+// Ensure the saved image has a white background
+var backgroundColor = 'white';
+Chart.plugins.register({
+    beforeDraw: function(c) {
+        var ctx = c.chart.ctx;
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, 0, c.chart.width, c.chart.height);
+    }
+});
+
 new Vue ({
   el: '#app',
   data: {
@@ -40,6 +50,7 @@ new Vue ({
            var alias = this.alias;
            this.showShare = true;
            var canvas = document.getElementById("rse-generator");
+
            canvas.toBlob(function(blob) {
               saveAs(blob, alias + "-rse-phenotype.png");
            });
@@ -97,6 +108,10 @@ new Vue ({
         this.chart.destroy()
       var canvas = document.getElementById("rse-generator");
       var ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
       var groups = this.getGroups();
 
       // Generate datasets
