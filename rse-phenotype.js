@@ -5,6 +5,7 @@ new Vue ({
     groups: "open source, academia",
     labels: "Software Engineering, Open Source Development, User Support, Research, Documentation",
     chart: undefined,
+    alias: null,
     title: "Research Software Engineer Phenotype: Dinosaur",
     datasetTemplate: { 
       label: 'open source',
@@ -35,11 +36,14 @@ new Vue ({
 
     saveImage: function() {
 
-        this.showShare = true;
-        var canvas = document.getElementById("rse-generator");
-        canvas.toBlob(function(blob) {
-            saveAs(blob, "my-rse-phenotype.png");
-        });
+        if (this.alias != null) {
+           var alias = this.alias;
+           this.showShare = true;
+           var canvas = document.getElementById("rse-generator");
+           canvas.toBlob(function(blob) {
+              saveAs(blob, alias + "-rse-phenotype.png");
+           });
+        }
     },
 
     // Functions to split variables by delimiter of choice
@@ -80,6 +84,12 @@ new Vue ({
     updateTitle: function(event) {
         this.title = event.target.value;
         this.render(); 
+    },
+
+    updateAlias: function(event) {
+        if (event.target.value != null) {
+            this.alias = event.target.value.replace(" ","-")
+        }
     },
 
     render: function() {
