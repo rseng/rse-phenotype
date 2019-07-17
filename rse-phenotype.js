@@ -4,6 +4,7 @@ new Vue ({
     groups: "open source, academia",
     labels: "Software Engineering, Open Source Development, User Support, Research, Documentation",
     chart: undefined,
+    title: "Research Software Engineer Phenotype: Dinosaur",
     datasetTemplate: { 
       label: 'open source',
       backgroundColor: [
@@ -74,6 +75,11 @@ new Vue ({
         this.render(); 
     },
 
+    updateTitle: function(event) {
+        this.title = event.target.value;
+        this.render(); 
+    },
+
     render: function() {
       if (this.chart)
         this.chart.destroy()
@@ -95,6 +101,11 @@ new Vue ({
           },
           options: {
             dragData: true,
+            title: {
+                padding: 30,
+                display: true,
+                text: this.title,
+            },
             legend: {
                display: true,
                position: "left"

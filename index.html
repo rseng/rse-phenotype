@@ -26,7 +26,7 @@
   <div class="container-fluid">
    <a class="navbar-brand navbar-brand-logo" href="https://us-rse.org">
        <img id="logo" alt="logo" src="img/logo-transparent.svg" style="width:200px"></a>
-      <a class="navbar-brand" href="">RSE Generator
+      <a class="navbar-brand" href="">RSE Phenotype Generator
       </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
@@ -34,6 +34,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        <li><a href="about/">About</a></li>
       </ul>
     </div>
   </div>
@@ -42,13 +43,19 @@
 <div class="container-fluid" style="padding:50px; padding-top:200px">
     <div class="row" id="app">
         <div class="col-md-6">
-            <canvas id="rse-generator"></canvas>
+            <canvas id="rse-generator" height="200px"></canvas>
             <button class="btn btn-primary btn-sm" v-on:click="render">Randomize</button>
         </div>
         <div class="col-md-6">
             <form class="form" @submit.prevent="addExpenses">
               <h4>RSE Generator</h4>
                 <p style="margin-bottom:20px"><small>What kind of research software engineer are you?</small></p>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" 
+                           placeholder="My RSE Phenotype" 
+                           v-on:input="updateTitle($event)"  type="text" v-model="title" required>
+                </div>
                 <div class="form-group">
                     <label>Dimensions</label>
                     <input class="form-control" 
@@ -80,7 +87,7 @@
 <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
 <!--https://github.com/chrispahm/chartjs-plugin-dragData-->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@0.3.0/dist/chartjs-plugin-dragData.min.js"></script>
-<script src="rse-generator.js"></script>
+<script src="rse-phenotype.js"></script>
 
 </body>
 </html>
