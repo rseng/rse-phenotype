@@ -89,6 +89,8 @@ img::-moz-selection {
   top: 1px !important;}
 }
 
+
+
 #mainNav {
   position: absolute;
   padding-top: 10px;
@@ -382,6 +384,13 @@ footer {
   }
   .navbar-custom .nav .navlinks-container.show-children .navlinks-children {
     display: block;
+  }
+  #logo {
+    display: none !important;
+  }
+  #logo-navbar {
+    min-height: 30px !important;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 768px) {
