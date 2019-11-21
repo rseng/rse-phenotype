@@ -82,7 +82,7 @@ new Vue ({
     },
 
     pullRequest: function() {
-        window.open("https://github.com/vsoch/rse-phenotypes", "_blank");    
+      window.open("https://github.com/USRSE/rse-phenotypes", "_blank");    
     },
 
     // Functions to split variables by delimiter of choice
