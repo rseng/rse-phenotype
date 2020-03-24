@@ -203,6 +203,9 @@ new Vue ({
           },
           options: {
             dragData: true,
+            dragOptions: {
+                showTooltip: true,
+            },
             onDragEnd: function (e, datasetIndex, index, value) { 
               // update saved values
               if (localStorage.values) {
