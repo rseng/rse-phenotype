@@ -23,3 +23,8 @@ could provide a score for each dimension.
 ### How do I participate?
 
 What are you waiting for? <a href="https://rseng.github.io/rse-phenotype">Generate your phenotype</a> and tell us about it!
+
+## Thank You!
+
+Thank you to [chrispahm/chartjs-plugin-dragdata](https://github.com/chrispahm/chartjs-plugin-dragdata)
+for providing the library to make dragging of the points possible.
