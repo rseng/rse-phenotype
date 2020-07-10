@@ -101,7 +101,7 @@ new Vue ({
       var groups = this.getGroups();
 
       // If values aren't null but are wrong length, reset
-      if ((this.values != null) && (this.values.length != groups.length)) {
+      if ((this.values != null) || (this.values.length != groups.length)) {
         console.log("Mismatch between values and groups, resetting values!");
         this.values = null;
       }
@@ -205,6 +205,14 @@ new Vue ({
             dragData: true,
             dragOptions: {
                 showTooltip: true,
+            },
+            // Don't auto resize scale
+            scale: {
+                ticks: {
+                  max: 100,
+                  min: 0
+                },
+                stepSize: 1
             },
             onDragEnd: function (e, datasetIndex, index, value) { 
               // update saved values
