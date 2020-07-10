@@ -99,7 +99,6 @@ new Vue ({
       // Generate datasets if not loaded from cache
       var datasets = Array();
       var groups = this.getGroups();
-      console.log(this.values)
 
       // If values aren't null but are wrong length, reset
       if ((this.values != null) || (this.values.length != groups.length)) {
