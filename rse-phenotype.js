@@ -207,6 +207,14 @@ new Vue ({
             dragOptions: {
                 showTooltip: true,
             },
+            // Don't auto resize scale
+            scale: {
+                ticks: {
+                  max: 100,
+                  min: 0
+                },
+                stepSize: 1
+            },
             onDragEnd: function (e, datasetIndex, index, value) { 
               // update saved values
               if (localStorage.values) {
