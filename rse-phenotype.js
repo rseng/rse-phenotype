@@ -101,11 +101,13 @@ new Vue ({
       var groups = this.getGroups();
 
       // If values aren't null but are wrong length, reset
-      if ((this.values != null) || (this.values.length != groups.length)) {
-        console.log("Mismatch between values and groups, resetting values!");
-        this.values = null;
-      }
-      
+      if (this.values != null) {
+            if (this.values.length != groups.length) {
+              console.log("Mismatch between values and groups, resetting values!");
+              this.values = null;
+          }
+      }      
+
       // If values are null, generate new values
       if (this.values == null) {
         for(var i = 0; i < groups.length; i++) {
