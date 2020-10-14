@@ -132,9 +132,10 @@ new Vue ({
           this.values = Array();
       }
 
-      if (values == null) {
+      labels = this.getLabels();
+      if (values == null || values.length != labels.length) {
         var values = [100]; // Cap at 100
-        for(var i = 0; i < this.getLabels().length -1; i++) {
+        for(var i = 0; i < labels.length -1; i++) {
           values.push(Math.floor(Math.random() * 30))
         }
         // Add to values to cache
